@@ -27,4 +27,6 @@ public interface ArticleRepository extends JpaRepository<Article,Long>{
 	/*Exercice 1.3*/
 	public List<Article> findByDescriptionOrBrand(String description, String brand);
 	
+	/*Exercice 1.4*/
+	public void deleteById(Long id);
 }
