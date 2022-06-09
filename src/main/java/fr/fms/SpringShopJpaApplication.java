@@ -1,6 +1,7 @@
 package fr.fms;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -79,6 +80,12 @@ public class SpringShopJpaApplication implements CommandLineRunner{
 		  
 		  /************************************************************/
 		  /*Exercice 1.5*/
+		  Optional<Article> articleToUpdate = articleRepository.findById((long)(2));		  
+		  articleToUpdate.get().setPrice(2000.0);
+		  articleRepository.save(articleToUpdate.get());
+		  
+		  /************************************************************/
+		  /*Exercice 1.6*/
 		  
 	}
 

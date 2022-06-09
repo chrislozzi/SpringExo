@@ -16,18 +16,24 @@ public class Article implements Serializable {
 	private String description;
 	private String brand;
 	private double price;
+	
 	public Article(String description, String brand, double price,Category category) {
 		this.description = description;
 		this.brand = brand;
 		this.price = price;
 		this.category= category;
 	}
+	public Article(Long id) {
+		this.id = id;
+	}
 	
-	@ManyToOne
-	private Category category;
 	public Article() {
 		super();
 	}
+	
+	@ManyToOne
+	private Category category;
+	
 
 
 	public Long getId() {

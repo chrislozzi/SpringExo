@@ -19,8 +19,7 @@ public interface ArticleRepository extends JpaRepository<Article,Long>{
 	@Query("select A from Article A where A.brand like %:x% and A.price > :y")
 	public List<Article> searchArticles(@Param("x") String brand, @Param("y")Double price);
 	  
-	  /*Exercice 1.2*/
-	  
+	/*Exercice 1.2*/	  
 	public Optional<Article>  findById(Long id);
 	public Optional<Article>  findByDescription(String description);
 	
@@ -29,4 +28,10 @@ public interface ArticleRepository extends JpaRepository<Article,Long>{
 	
 	/*Exercice 1.4*/
 	public void deleteById(Long id);
+	
+	/*Exercice 1.5*/
+	public default void updateById(Long id) {
+		
+	}
+	
 }
