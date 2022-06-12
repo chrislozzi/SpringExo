@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.DynamicUpdate;
+@DynamicUpdate
 @Entity
 public class Article implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import org.hibernate.annotations.DynamicUpdate;
+@DynamicUpdate
 @Entity
 public class Category implements Serializable {
 	private static final long serialVersionUID = 2L;
@@ -17,7 +19,7 @@ public class Category implements Serializable {
 	private String name;
 	
 	public Category() {
-		super();
+		
 	}
 	
 	@OneToMany(mappedBy = "category")
@@ -43,5 +45,14 @@ public class Category implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + "]";
+	}
+
+	
+	
+	
 		
 }
