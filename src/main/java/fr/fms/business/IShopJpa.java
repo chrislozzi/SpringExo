@@ -12,7 +12,7 @@ public interface IShopJpa {
 	public Article readArticleByDescription(String description);
 	public void createArticle(Article article);
 	public void deleteArticleById(Long articleId);
-	public Article readCategoryArticlesById(Long categoryId);
+	public List<Article> readCategoryArticlesById(Long categoryId);
 	public List<Category> readCategories();
 	public Category readCategoryById(Long categoryId);
 	public Category readCategoryByName(String Name);

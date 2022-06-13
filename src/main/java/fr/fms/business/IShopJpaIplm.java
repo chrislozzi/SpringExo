@@ -67,9 +67,9 @@ public class IShopJpaIplm implements IShopJpa{
 
 
 	@Override
-	public Article readCategoryArticlesById(Long categoryId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Article> readCategoryArticlesById(Long categoryId) {
+		
+		return  articleRepository.findByCategoryId( categoryId);
 	}
 
 	@Override
@@ -80,14 +80,15 @@ public class IShopJpaIplm implements IShopJpa{
 
 	@Override
 	public void createCategory(Category category) {
-		// TODO Auto-generated method stub
+		
+		categoryRepository.save(category);
 		
 	}
 
 
 	@Override
 	public void deleteCategoryById(Long categoryId) {
-		// TODO Auto-generated method stub
+		categoryRepository.deleteById(categoryId);
 		
 	}
 	
